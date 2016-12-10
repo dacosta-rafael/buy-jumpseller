@@ -32,7 +32,7 @@ class Model {
 
 		public function curl_call($product_id, $storecode, $storetoken) {
 			$url = 'https://api.jumpseller.com/v1/products/'.$product_id.'.json?login='.$storecode.'&authtoken='.$storetoken;
-			print_r($url);
+			//print_r($url);
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, array(
