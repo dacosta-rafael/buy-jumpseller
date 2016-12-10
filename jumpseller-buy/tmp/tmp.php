@@ -2,7 +2,7 @@
 	
 <div style="margin:5px auto; padding: 10px; clear:both; max-width:100px;text-align:center;border: 1px solid #4CAF50;">
 
-<a style="text-decoration:none;text-align:center;" href=" https://<?php echo $storecode;?>.jumpseller.com/<?php echo $_output['product']['permalink'];?>" target="_blank">
+<a style="text-decoration:none;text-align:center;" href=" https://<?php echo $_output['storecode'];?>.jumpseller.com/<?php echo $_output['product']['permalink'];?>" target="_blank">
 	
 	<div style="width:100%; text-align:center;">
 		<img style="max-width:90px" src="<?php echo $_output['product']['images'][0]['url'];?>" />

@@ -3,7 +3,7 @@
 Plugin Name: Jumpseller Buy
 Plugin URI: 
 Description: Jumpseller Buy Button
-Version: 0.1 BETA
+Version: 0.2 BETA
 Author: 
 Author URI: 
 */
@@ -12,12 +12,21 @@ Author URI:
 short code format is : [jumpseller product_id="value"]
 */
 
+include "includes/config.php";
+
+
+
 class Model {
 		public function jumpseller_parse($atts, $storecode, $storetoken) {
 				$product_id = $atts['product_id'];
 				$call = $this->curl_call( $product_id, $storecode, $storetoken) ;
 				$json_data =   json_decode($call, true);
 				///munge file here and save it
+				//print_r($json_data);
+				$json_data = array_merge($json_data, 
+					array( 'storecode' => $storecode )
+					);
+				//print_r($json_data);
 			  	return $json_data;
 		}
 
@@ -58,27 +67,16 @@ class Controller {
           		$_output = $this->model->jumpseller_parse($atts, $this->storecode, $this->storetoken);
           		//print_r( $_output  );
           		ob_start();
-          		include 'tmp.php';
+          		include 'tmp/tmp.php';
           		return ob_get_clean();
 	} 
 }
 
-$storecode = 'get from config';
-$storetoken = 'get from config';
+
+
+// add conditional here, if above fails?
 //instatiate functions
 $controller = new Controller($storecode, $storetoken);
 //tell wordpress to register the jumpseller shortcode
 add_shortcode( 'jumpseller', array( $controller, 'jumpseller_handler' ) );
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
