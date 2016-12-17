@@ -11,9 +11,11 @@ Author URI:
 /*
 short code format is : [jumpseller product_id="value"]
 */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 include "includes/config.php";
-
 
 
 class Model {

@@ -1,4 +1,8 @@
-
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+?>
 	
 <div style="margin:5px auto; padding: 10px; clear:both; max-width:100px;text-align:center;border: 1px solid #4CAF50;">
 
@@ -15,8 +19,6 @@
 	<input type="button" style="background-color: #4CAF50;border: none;color: white;padding: 10px 20px;text-align: center;text-decoration: none;display: inline-block;font-size: 14px;margin: 4px 2px;cursor: pointer;" value="Buy" />
 
 </a>
-	<div style="font-size:10px;line-height:normal; text-decoration:none;text-align:center; margin:5px 0 0 0">Powered by <a style="text-decoration:none;" href="https://jumpseller.com" target="_blank">Jumpseller</a>
-	</div>
 </div>
 
 	
