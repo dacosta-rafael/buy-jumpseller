@@ -3,7 +3,7 @@
 Plugin Name: Jumpseller Buy
 Plugin URI: 
 Description: Jumpseller Buy Button
-Version: 0.2 BETA
+Version: 0.3
 Author: 
 Author URI: 
 */
