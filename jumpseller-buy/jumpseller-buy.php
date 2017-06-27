@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 include "includes/config.php";
 
 
-class Model {
+class jump_Model {
 		public function jumpseller_parse($atts, $storecode, $storetoken) {
 				$product_id = $atts['product_id'];
 				$call = $this->curl_call( $product_id, $storecode, $storetoken) ;
@@ -57,16 +57,16 @@ class Model {
 }
 
 
-class Controller {
-     public $model;	
+class jump_Controller {
+     public $jump_model;	
      public function __construct($storecode, $storetoken)  
      {  
-     	            $this->model = new Model();
+     	            $this->jump_model = new jump_Model();
      	            $this->storecode = $storecode;
      	            $this->storetoken = $storetoken;
      } 
      public function jumpseller_handler( $atts ) {
-          		$_output = $this->model->jumpseller_parse($atts, $this->storecode, $this->storetoken);
+          		$_output = $this->jump_model->jumpseller_parse($atts, $this->storecode, $this->storetoken);
           		//print_r( $_output  );
           		ob_start();
           		include 'tmp/tmp.php';
@@ -78,7 +78,7 @@ class Controller {
 
 // add conditional here, if above fails?
 //instatiate functions
-$controller = new Controller($storecode, $storetoken);
+$jump_controller = new jump_Controller($storecode, $storetoken);
 //tell wordpress to register the jumpseller shortcode
-add_shortcode( 'jumpseller', array( $controller, 'jumpseller_handler' ) );
+add_shortcode( 'jumpseller', array( $jump_controller, 'jumpseller_handler' ) );
 ?>
