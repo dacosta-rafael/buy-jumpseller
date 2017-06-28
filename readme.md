@@ -1,4 +1,4 @@
-##Buy Jumpseller
+## Buy Jumpseller
 
 Buy Jumseller  is a BETA WordPress PlugIn
 
