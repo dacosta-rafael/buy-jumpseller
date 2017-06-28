@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Jumpseller Buy
+Plugin Name: Buy Jumpseller 
 Plugin URI: 
-Description: Jumpseller Buy Button
+Description: Buy Jumpseller  Button
 Version: 0.3
 Author: 
 Author URI: 
