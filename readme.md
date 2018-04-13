@@ -7,3 +7,5 @@ Buy Jumseller  is a BETA WordPress PlugIn
 
 [Presentation](https://docs.google.com/presentation/d/19VWws5OCrvrZtih4dpb4RzW0zThf56IQ9kHK0xAfFso/edit?usp=sharing)
 
+[Download](https://wordpress.org/plugins/buy-jumpseller/)
+
