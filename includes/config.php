@@ -1,98 +1,92 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
+	exit; // Exit if accessed directly
 }
 
 
 // array of options
-
 /*
 function jumpseller_data_(){
-    $jumpseller_data = array(
-        'storecode' => 'pihaus',
-        'storetoken' => 'fb4d1558b97876e56c730ac60b159dc5'
-    );
-    // add a new option
-    //add_option('jumpseller_data', $jumpseller_data);
-    update_option('jumpseller_data', $jumpseller_data);
+	$jumpseller_data = array(
+		'storecode' => 'pihaus',
+		'storetoken' => 'fb4d1558b97876e56c730ac60b159dc5'
+	);
+	// add a new option
+	//add_option('jumpseller_data', $jumpseller_data);
+	update_option('jumpseller_data', $jumpseller_data);
 
-    // get an option
-    $jumpseller_data_ = get_option('jumpseller_data');
-    // output the title
-    //print_r($jumpseller_data_);
-    return $jumpseller_data_;
+	// get an option
+	$jumpseller_data_ = get_option('jumpseller_data');
+	// output the title
+	return $jumpseller_data_;
 }
 */
 
 // try to make this an array
-function jumpseller_settings_init()
-{
-    // register a new setting for "reading" page
-    register_setting('reading', 'storecode');
-    register_setting('reading', 'storetoken');
- 
-    // register a new section in the "reading" page
-    add_settings_section(
-        'jumpseller_settings_section',
-        'Jumpseller Configuration',
-        'jumpseller_settings_section_cb',
-        'reading'
-    );
- 
-    // register a new field in the "jumpseller_settings_section" section, inside the "reading" page
-    add_settings_field(
-        'jumpseller_settings_storecode',
-        'Jumpseller storecode',
-        'jumpseller_settings_field_storecode',
-        'reading',
-        'jumpseller_settings_section'
-    );
+function jumpseller_settings_init() {
+	// register a new setting for "reading" page
+	register_setting( 'reading', 'storecode' );
+	register_setting( 'reading', 'storetoken' );
 
-    // register a new field in the "jumpseller_settings_section" section, inside the "reading" page
-    add_settings_field(
-        'jumpseller_settings_storetoken',
-        'Jumpseller storetoken',
-        'jumpseller_settings_field_storetoken',
-        'reading',
-        'jumpseller_settings_section'
-    );
+	// register a new section in the "reading" page
+	add_settings_section(
+		'jumpseller_settings_section',
+		'Jumpseller Configuration',
+		'jumpseller_settings_section_cb',
+		'reading'
+	);
+
+	// register a new field in the "jumpseller_settings_section" section, inside the "reading" page
+	add_settings_field(
+		'jumpseller_settings_storecode',
+		'Jumpseller storecode',
+		'jumpseller_settings_field_storecode',
+		'reading',
+		'jumpseller_settings_section'
+	);
+
+	// register a new field in the "jumpseller_settings_section" section, inside the "reading" page
+	add_settings_field(
+		'jumpseller_settings_storetoken',
+		'Jumpseller storetoken',
+		'jumpseller_settings_field_storetoken',
+		'reading',
+		'jumpseller_settings_section'
+	);
 }
 /**
  * register jumpseller_settings_init to the admin_init action hook
  */
-add_action('admin_init', 'jumpseller_settings_init');
+add_action( 'admin_init', 'jumpseller_settings_init' );
 
 /**
  * callback functions
  */
- 
+
 // section content cb
-function jumpseller_settings_section_cb()
-{
-    echo '<p>This is where you set storecode and storetoken.</p>';
+function jumpseller_settings_section_cb() {
+	echo '<p>This is where you set storecode and storetoken.</p>';
 }
- 
+
 // field content cb
-function jumpseller_settings_field_storecode()
-{
-    // get the value of the setting we've registered with register_setting()
-    $setting = get_option('storecode');
-    // output the field
-    if( isset($setting) ){
-    echo '<input type="text" name="storecode" value=" ' .esc_attr($setting). '">';
-    }
+function jumpseller_settings_field_storecode() {
+	// get the value of the setting we've registered with register_setting()
+	$setting = get_option( 'storecode' );
+	// output the field
+	if ( isset( $setting ) ) {
+		echo '<input type="text" name="storecode" value=" ' . esc_attr( $setting ) . '">';
+	}
 
 }
 
 // field content cb
-function jumpseller_settings_field_storetoken()
-{
-    // get the value of the setting we've registered with register_setting()
-    $setting = get_option('storetoken');
-    // output the field
-    if( isset($setting) ){
-    echo '<input type="text" name="storetoken" value=" ' .esc_attr($setting). '">';
-    }
+function jumpseller_settings_field_storetoken() {
+	// get the value of the setting we've registered with register_setting()
+	$setting = get_option( 'storetoken' );
+	// output the field
+	if ( isset( $setting ) ) {
+		echo '<input type="text" name="storetoken" value=" ' . esc_attr( $setting ) . '">';
+	}
 
 }
 
@@ -102,7 +96,7 @@ $jumpseller_data_ = jumpseller_data_();
 $storecode = $jumpseller_data_["storecode"];
 $storetoken = $jumpseller_data_["storetoken"];
 */
-$storecode = get_option('storecode');
-$storetoken = get_option('storetoken');
+$storecode  = get_option( 'storecode' );
+$storetoken = get_option( 'storetoken' );
 
-?>
+
