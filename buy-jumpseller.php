@@ -3,7 +3,7 @@
 Plugin Name: Buy Jumpseller
 Plugin URI:
 Description: Buy Jumpseller  Button
-Version: 0.5
+Version: 0.6
 Author: Rafael da Costa
 Author URI: https://github.com/dacosta-rafael/buy-jumpseller
 */

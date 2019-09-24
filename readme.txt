@@ -29,6 +29,9 @@ Use a  Wordpress product id shortcode on a post to display a buy button that wil
 
 == Changelog ==
 
+= 1.2 =
+* Php sniffer
+
 = 1.1 =
 * Better code format
 
