@@ -4,23 +4,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-// array of options
-/*
-function jumpseller_data_(){
-	$jumpseller_data = array(
-		'storecode' => 'pihaus',
-		'storetoken' => 'fb4d1558b97876e56c730ac60b159dc5'
-	);
-	// add a new option
-	//add_option('jumpseller_data', $jumpseller_data);
-	update_option('jumpseller_data', $jumpseller_data);
-
-	// get an option
-	$jumpseller_data_ = get_option('jumpseller_data');
-	// output the title
-	return $jumpseller_data_;
-}
-*/
 
 // try to make this an array
 function jumpseller_settings_init() {
